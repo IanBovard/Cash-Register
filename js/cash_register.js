@@ -20,7 +20,7 @@ displayInput();
 
   let buttonPop = function(array){
     for (let i = 0; i < array.length; i++){
-      let numberButtons = document.createElement("div");
+      let numberButtons = document.createElement("button");
       numberButtons.className = "buttons";
       numberButtons.value = array[i];
       numberButtons.innerHTML = " [ " + array[i] + " ] ";
@@ -30,7 +30,6 @@ displayInput();
     }
   };
   buttonPop(NUMBERARRAY);
-  console.log(numberButtons);
 
 
 
