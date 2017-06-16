@@ -2,7 +2,7 @@ const DISPLAY = document.getElementById("screen");
 const BTN9 = document.getElementById("nine");
 const BUTTONBOX = document.getElementById('buttonsBox');
 
-const NUMBERARRAY = ["0","00","1","2","3","4","5","6","7","8","9"];
+const NUMBERARRAY = ["9","8","7","6","5","4","3","2","1","0","00"];
 
 
  let displayInput =function(num){
