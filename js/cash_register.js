@@ -48,7 +48,7 @@ mathPop(MATH_ARRAY);
 let registerPop = function(array){
   for (let i = 0; i < array.length; i++){
     let registerButtons = document.createElement("button");
-    registerButtons.className = "mathButt";
+    registerButtons.className = "regButt";
     registerButtons.id = array[i];
     registerButtons.innerHTML = " [ " + array[i] + " ] ";
     REGISTER_BOX.appendChild(registerButtons);
