@@ -1,12 +1,15 @@
+//html variables and arrays
 const DISPLAY = document.getElementById("screen");
 const BUTTON_BOX = document.getElementById("buttonBox");
 const MATH_BOX = document.getElementById("mathBox");
 const REGISTER_BOX = document.getElementById("registerBox");
-const NUMBER_ARRAY = ["9","8","7","6","5","4","3","2","1","0","00", "."];
-const MATH_ARRAY = ["+", "-", "x", "/", "="];
+const NUMBER_ARRAY = ["9","8","7","6","5","4","3","2","1","0","00"];
+const MATH_ARRAY = ["+", "-", "x", "/", "=", "."];
 const REGISTER_ARRAY = ["withdraw cash", "deposit cash", "get balance", "clear"];
 
-let displayInput = function(num){
+
+//three event listeners
+let numberInput = function(num){
     displayPopulated = false;
   return function(){
       if (displayPopulated === false){
@@ -17,8 +20,13 @@ let displayInput = function(num){
      }
   };
 };
-  displayInput();
+  numberInput();
 
+let mathInput = function(){
+
+};
+
+//button population arrays
 let buttonPop = function(array){
     for (let i = 0; i < array.length; i++){
       let numberButtons = document.createElement("button");
@@ -26,7 +34,7 @@ let buttonPop = function(array){
       numberButtons.id = array[i];
       numberButtons.value = array[i];
       numberButtons.innerHTML = " [ " + array[i] + " ] ";
-      numberButtons.addEventListener("click", displayInput(array[i]));
+      numberButtons.addEventListener("click", numberInput(array[i]));
       BUTTON_BOX.appendChild(numberButtons);
       console.log(numberButtons.id);
 
@@ -51,7 +59,12 @@ let registerPop = function(array){
     registerButtons.className = "regButt";
     registerButtons.id = array[i];
     registerButtons.innerHTML = " [ " + array[i] + " ] ";
+    registerButtons.addEventListener('click', function(){
+      DISPLAY.innerHTML = "0.00";
+      displayPopulated = false;
+    });
     REGISTER_BOX.appendChild(registerButtons);
+
   }
 };
 registerPop(REGISTER_ARRAY);
