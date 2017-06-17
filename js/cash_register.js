@@ -48,22 +48,42 @@ let mathPop = function(array){
   }
 };
 mathPop(MATH_ARRAY);
+
    let input = 0;
    let total = 0;
     let storedOp;
+    console.log(storedOp);
+
 let mathAdd = document.getElementById("+");
   mathAdd.addEventListener("click", function(){
-    if (typeof storedOp !== "string"){
+    if (storedOp !== mathAdd.innerHTML){
+      storedOp = mathAdd.innerHTML;
       input = parseInt(DISPLAY.innerHTML);
       total = input;
-      storedOp = mathAdd.innerHTML;
+      DISPLAY.innerHTML = input;
+      displayPopulated = false;
+    }else if (storedOp === mathAdd.innerHTML){
+      input = parseInt(DISPLAY.innerHTML);
+      total+=input;
+      DISPLAY.innerHTML = total;
+      displayPopulated = false;
+      console.log(storedOp);
+    }
+  });
+
+let mathSubtract = document.getElementById("-");
+  mathSubtract.addEventListener("click", function(){
+    if (storedOp !== mathSubtract.innerHTML){
+      storedOp = mathSubtract.innerHTML;
+      input = parseInt(DISPLAY.innerHTML);
+      total = input;
       DISPLAY.innerHTML = input;
       displayPopulated = false;
       console.log(input);
       console.log(storedOp);
-    }else{
+    }else if (storedOp === mathSubtract.innerHTML){
       input = parseInt(DISPLAY.innerHTML);
-      total+=input;
+      total-=input;
       DISPLAY.innerHTML = total;
       displayPopulated = false;
       console.log(total);
