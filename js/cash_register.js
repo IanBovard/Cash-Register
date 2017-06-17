@@ -55,7 +55,7 @@ let mathAdd = document.getElementById("+");
   mathAdd.addEventListener("click", function(){
     if (typeof storedOp !== "string"){
       input = parseInt(DISPLAY.innerHTML);
-      total += input;
+      total = input;
       storedOp = mathAdd.innerHTML;
       DISPLAY.innerHTML = input;
       displayPopulated = false;
