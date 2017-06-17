@@ -10,6 +10,8 @@ const REGISTER_ARRAY = ["withdraw cash", "deposit cash", "get balance", "clear"]
 let CALC = window.calculator;
 let displayMem = 0;
 
+//screen concat
+
 let numberInput = function(num){
     displayPopulated = false;
   return function(){
@@ -21,6 +23,8 @@ let numberInput = function(num){
      }
   };
 };
+
+//button populators
 
 let buttonPop = function(array){
     for (let i = 0; i < array.length; i++){
@@ -48,6 +52,25 @@ let mathPop = function(array){
   }
 };
 mathPop(MATH_ARRAY);
+
+
+let registerPop = function(array){
+  for (let i = 0; i < array.length; i++){
+    let registerButtons = document.createElement("button");
+    registerButtons.className = "regButt";
+    registerButtons.id = array[i];
+    registerButtons.innerHTML = " [ " + array[i] + " ] ";
+    registerButtons.addEventListener('click', function(){
+      DISPLAY.innerHTML = "0.00";
+      displayPopulated = false;
+      storedOp = 0;
+      total = 0;
+    });
+    REGISTER_BOX.appendChild(registerButtons);
+
+  }
+};
+registerPop(REGISTER_ARRAY);
 
    let input = 0;
    let total = 0;
@@ -79,11 +102,27 @@ let mathSubtract = document.getElementById("-");
       total = input;
       DISPLAY.innerHTML = input;
       displayPopulated = false;
-      console.log(input);
-      console.log(storedOp);
     }else if (storedOp === mathSubtract.innerHTML){
       input = parseInt(DISPLAY.innerHTML);
       total-=input;
+      DISPLAY.innerHTML = total;
+      displayPopulated = false;
+    }
+  });
+
+let mathMult = document.getElementById("x");
+  mathMult.addEventListener("click", function(){
+    if (storedOp !== mathMult.innerHTML){
+      storedOp = mathMult.innerHTML;
+      input = parseInt(DISPLAY.innerHTML);
+      total = input;
+      DISPLAY.innerHTML = input;
+      displayPopulated = false;
+      console.log(input);
+      console.log(storedOp);
+    }else if (storedOp === mathMult.innerHTML){
+      input = parseInt(DISPLAY.innerHTML);
+      total*=input;
       DISPLAY.innerHTML = total;
       displayPopulated = false;
       console.log(total);
@@ -92,36 +131,23 @@ let mathSubtract = document.getElementById("-");
     }
   });
 
-
-/*mathButtons.addEventListener("click", function(){
-  let input = 0;
-  let storedOp;
-  if (typeof mathButtons.id !== array[i]){
-    input = DISPLAY.innerHTML;
-    storedOp = mathButtons.innerHTML;
-    DISPLAY.innerHTML = "0.00";
-    displayPopulated = false;
-    console.log(input);
-    console.log(storedOp);
-  }else if (mathButtons.id === "0"){
-    DISPLAY.innerHTML = "BLAH";
-  }
-});*/
-
-let registerPop = function(array){
-  for (let i = 0; i < array.length; i++){
-    let registerButtons = document.createElement("button");
-    registerButtons.className = "regButt";
-    registerButtons.id = array[i];
-    registerButtons.innerHTML = " [ " + array[i] + " ] ";
-    registerButtons.addEventListener('click', function(){
-      DISPLAY.innerHTML = "0.00";
+  let mathDivide = document.getElementById("/");
+  mathDivide.addEventListener("click", function(){
+    if (storedOp !== mathDivide.innerHTML){
+      storedOp = mathDivide.innerHTML;
+      input = parseInt(DISPLAY.innerHTML);
+      total = input;
+      DISPLAY.innerHTML = input;
       displayPopulated = false;
-      storedOp = 0;
-      total = 0;
-    });
-    REGISTER_BOX.appendChild(registerButtons);
-
-  }
-};
-registerPop(REGISTER_ARRAY);
+      console.log(input);
+      console.log(storedOp);
+    }else if (storedOp === mathDivide.innerHTML){
+      input = parseInt(DISPLAY.innerHTML);
+      total/=input;
+      DISPLAY.innerHTML = total;
+      displayPopulated = false;
+      console.log(total);
+      console.log(storedOp);
+      console.log(input);
+    }
+  });
