@@ -77,7 +77,6 @@ registerPop(REGISTER_ARRAY);
    let input = 0;
    let total = 0;
     let storedOp;
-    console.log(storedOp);
 
 let mathAdd = document.getElementById("+");
   mathAdd.addEventListener("click", function(){
@@ -93,28 +92,24 @@ let mathAdd = document.getElementById("+");
       total+=input;
       DISPLAY.innerHTML = total;
       displayPopulated = false;
-      console.log(storedOp);
     }else if (storedOp === mathSubtract.innerHTML){
       storedOp = mathAdd.innerHTML;
       input = parseInt(DISPLAY.innerHTML);
       total -= input;
       DISPLAY.innerHTML = total;
       displayPopulated = false;
-      console.log(storedOp);
     }else if (storedOp === mathMult.innerHTML){
       storedOp = mathAdd.innerHTML;
       input = parseInt(DISPLAY.innerHTML);
       total *= input;
       DISPLAY.innerHTML = total;
       displayPopulated = false;
-      console.log(storedOp);
     }else if (storedOp === mathDivide.innerHTML){
       storedOp = mathAdd.innerHTML;
       input = parseInt(DISPLAY.innerHTML);
       total /= input;
       DISPLAY.innerHTML = total;
       displayPopulated = false;
-      console.log(storedOp);
     }
   });
 
@@ -131,28 +126,24 @@ let mathSubtract = document.getElementById("-");
       total-=input;
       DISPLAY.innerHTML = total;
       displayPopulated = false;
-      console.log(storedOp);
     }else if (storedOp === mathAdd.innerHTML){
       storedOp = mathSubtract.innerHTML;
       input = parseInt(DISPLAY.innerHTML);
       total += input;
       DISPLAY.innerHTML = total;
       displayPopulated = false;
-      console.log(storedOp);
     }else if (storedOp === mathMult.innerHTML){
       storedOp = mathSubtract.innerHTML;
       input = parseInt(DISPLAY.innerHTML);
       total *= input;
       DISPLAY.innerHTML = total;
       displayPopulated = false;
-      console.log(storedOp);
     }else if (storedOp === mathDivide.innerHTML){
       storedOp = mathSubtract.innerHTML;
       input = parseInt(DISPLAY.innerHTML);
       total /= input;
       DISPLAY.innerHTML = total;
       displayPopulated = false;
-      console.log(storedOp);
     }
   });
 
