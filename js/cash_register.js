@@ -30,7 +30,7 @@ let numberInput = function(num){
 let buttonPop = function(array){
     for (let i = 0; i < array.length; i++){
       let numberButtons = document.createElement("button");
-      numberButtons.className = "numButt";
+      numberButtons.className = "numButton";
       numberButtons.id = array[i];
       numberButtons.innerHTML = " [ " + array[i] + " ] ";
       numberButtons.addEventListener("click", numberInput(array[i]));
@@ -44,7 +44,7 @@ let mathPop = function(array){
 
   for (let i = 0; i < array.length; i++){
     let mathButtons = document.createElement("button");
-    mathButtons.className = "mathButt";
+    mathButtons.className = "mathButton";
     mathButtons.id = array[i];
     mathButtons.innerHTML = " [ " + array[i] + " ] ";
     MATH_BOX.appendChild(mathButtons);
@@ -57,7 +57,7 @@ mathPop(MATH_ARRAY);
 let registerPop = function(array){
   for (let i = 0; i < array.length; i++){
     let registerButtons = document.createElement("button");
-    registerButtons.className = "regButt";
+    registerButtons.className = "regButton";
     registerButtons.id = array[i];
     registerButtons.innerHTML = " [ " + array[i] + " ] ";
     registerButtons.addEventListener('click', function(){
