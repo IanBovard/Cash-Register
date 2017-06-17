@@ -95,37 +95,29 @@ let mathAdd = document.getElementById("+");
       input = parseFloat(DISPLAY.innerHTML);
       total = input;
       DISPLAY.innerHTML = input;
-      displayPopulated = false;
-      decimalClicked = false;
     }else if (storedOp === mathAdd.innerHTML){
       storedOp = mathAdd.innerHTML;
       input = parseFloat(DISPLAY.innerHTML);
       total+=input;
       DISPLAY.innerHTML = total;
-      displayPopulated = false;
-      decimalClicked = false;
     }else if (storedOp === mathSubtract.innerHTML){
       storedOp = mathAdd.innerHTML;
       input = parseFloat(DISPLAY.innerHTML);
       total -= input;
       DISPLAY.innerHTML = total;
-      displayPopulated = false;
-      decimalClicked = false;
     }else if (storedOp === mathMult.innerHTML){
       storedOp = mathAdd.innerHTML;
       input = parseFloat(DISPLAY.innerHTML);
       total *= input;
       DISPLAY.innerHTML = total;
-      displayPopulated = false;
-      decimalClicked = false;
     }else if (storedOp === mathDivide.innerHTML){
       storedOp = mathAdd.innerHTML;
       input = parseFloat(DISPLAY.innerHTML);
       total /= input;
       DISPLAY.innerHTML = total;
+    }
       displayPopulated = false;
       decimalClicked = false;
-    }
   });
 
 let mathSubtract = document.getElementById("-");
@@ -135,36 +127,29 @@ let mathSubtract = document.getElementById("-");
       input = parseFloat(DISPLAY.innerHTML);
       total = input;
       DISPLAY.innerHTML = input;
-      displayPopulated = false;
-      decimalClicked = false;
     }else if (storedOp === mathSubtract.innerHTML){
       input = parseFloat(DISPLAY.innerHTML);
       total-=input;
       DISPLAY.innerHTML = total;
-      displayPopulated = false;
-      decimalClicked = false;
     }else if (storedOp === mathAdd.innerHTML){
       storedOp = mathSubtract.innerHTML;
       input = parseFloat(DISPLAY.innerHTML);
       total += input;
       DISPLAY.innerHTML = total;
-      displayPopulated = false;
-      decimalClicked = false;
     }else if (storedOp === mathMult.innerHTML){
       storedOp = mathSubtract.innerHTML;
       input = parseFloat(DISPLAY.innerHTML);
       total *= input;
       DISPLAY.innerHTML = total;
-      displayPopulated = false;
-      decimalClicked = false;
     }else if (storedOp === mathDivide.innerHTML){
       storedOp = mathSubtract.innerHTML;
       input = parseFloat(DISPLAY.innerHTML);
       total /= input;
       DISPLAY.innerHTML = total;
+    }
+
       displayPopulated = false;
       decimalClicked = false;
-    }
   });
 
 let mathMult = document.getElementById("x");
@@ -174,36 +159,27 @@ let mathMult = document.getElementById("x");
       input = parseFloat(DISPLAY.innerHTML);
       total = input;
       DISPLAY.innerHTML = input;
-      displayPopulated = false;
-      decimalClicked = false;
     }else if (storedOp === mathMult.innerHTML){
       input = parseFloat(DISPLAY.innerHTML);
       total*=input;
       DISPLAY.innerHTML = total;
-      displayPopulated = false;
-      decimalClicked = false;
     }else if (storedOp === mathAdd.innerHTML){
       storedOp = mathMult.innerHTML;
       input = parseFloat(DISPLAY.innerHTML);
       total += input;
-      DISPLAY.innerHTML = total;
-      displayPopulated = false;
-      decimalClicked = false;
     }else if (storedOp === mathSubtract.innerHTML){
       storedOp = mathMult.innerHTML;
       input = parseFloat(DISPLAY.innerHTML);
       total -= input;
       DISPLAY.innerHTML = total;
-      displayPopulated = false;
-      decimalClicked = false;
     }else if (storedOp === mathDivide.innerHTML){
       storedOp = mathMult.innerHTML;
       input = parseFloat(DISPLAY.innerHTML);
       total /= input;
       DISPLAY.innerHTML = total;
+    }
       displayPopulated = false;
       decimalClicked = false;
-    }
   });
 
   let mathDivide = document.getElementById("/");
@@ -213,35 +189,29 @@ let mathMult = document.getElementById("x");
       input = parseFloat(DISPLAY.innerHTML);
       total = input;
       DISPLAY.innerHTML = input;
-      displayPopulated = false;
-      decimalClicked = false;
     }else if (storedOp === mathDivide.innerHTML){
       input = parseFloat(DISPLAY.innerHTML);
       total/=input;
       DISPLAY.innerHTML = total;
-      displayPopulated = false;
-      decimalClicked = false;
     }else if (storedOp === mathAdd.innerHTML){
       storedOp = mathDivide.innerHTML;
       input = parseFloat(DISPLAY.innerHTML);
       total += input;
       DISPLAY.innerHTML = total;
-      displayPopulated = false;
     }else if (storedOp === mathSubtract.innerHTML){
       storedOp = mathDivide.innerHTML;
       input = parseFloat(DISPLAY.innerHTML);
       total -= input;
       DISPLAY.innerHTML = total;
       displayPopulated = false;
-      decimalClicked = false;
     }else if (storedOp === mathMult.innerHTML){
       storedOp = mathDivide.innerHTML;
       input = parseFloat(DISPLAY.innerHTML);
       total *= input;
       DISPLAY.innerHTML = total;
+    }
       displayPopulated = false;
       decimalClicked = false;
-    }
   });
 
     let mathEqual = document.getElementById("=");
@@ -251,30 +221,24 @@ let mathMult = document.getElementById("x");
       input = parseFloat(DISPLAY.innerHTML);
       total+=input;
       DISPLAY.innerHTML = total;
-      displayPopulated = false;
-      decimalClicked = false;
     }else if (storedOp === mathSubtract.innerHTML){
       storedOp = 0;
       input = parseFloat(DISPLAY.innerHTML);
       total -= input;
       DISPLAY.innerHTML = total;
-      displayPopulated = false;
-      decimalClicked = false;
     }else if (storedOp === mathMult.innerHTML){
       storedOp = 0;
       input = parseFloat(DISPLAY.innerHTML);
       total *= input;
       DISPLAY.innerHTML = total;
-      displayPopulated = false;
-      decimalClicked = false;
     }else if (storedOp === mathDivide.innerHTML){
       storedOp = 0;
       input = parseFloat(DISPLAY.innerHTML);
       total /= input;
       DISPLAY.innerHTML = total;
+    }
       displayPopulated = false;
       decimalClicked = false;
-    }
   });
 
 })(window);
