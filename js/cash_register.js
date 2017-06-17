@@ -1,5 +1,6 @@
 /*jshint esversion: 6 */
 //html variables and arrays
+(function(window){
 const DISPLAY = document.getElementById("screen");
 const BUTTON_BOX = document.getElementById("buttonBox");
 const MATH_BOX = document.getElementById("mathBox");
@@ -31,7 +32,6 @@ let buttonPop = function(array){
       let numberButtons = document.createElement("button");
       numberButtons.className = "numButt";
       numberButtons.id = array[i];
-      numberButtons.value = array[i];
       numberButtons.innerHTML = " [ " + array[i] + " ] ";
       numberButtons.addEventListener("click", numberInput(array[i]));
       BUTTON_BOX.appendChild(numberButtons);
@@ -87,25 +87,33 @@ let mathAdd = document.getElementById("+");
       total = input;
       DISPLAY.innerHTML = input;
       displayPopulated = false;
-      console.log(input);
-      console.log(total);
-      console.log(storedOp);
     }else if (storedOp === mathAdd.innerHTML){
+      storedOp = mathAdd.innerHTML;
       input = parseInt(DISPLAY.innerHTML);
       total+=input;
       DISPLAY.innerHTML = total;
       displayPopulated = false;
-      console.log(input);
-      console.log(total);
       console.log(storedOp);
-    }else if (storedOp !== mathAdd.innerHTML){
-      input = parseInt(DISPLAY.innerHTML);
+    }else if (storedOp === mathSubtract.innerHTML){
       storedOp = mathAdd.innerHTML;
-      total += input;
+      input = parseInt(DISPLAY.innerHTML);
+      total -= input;
       DISPLAY.innerHTML = total;
       displayPopulated = false;
-      console.log(input);
-      console.log(total);
+      console.log(storedOp);
+    }else if (storedOp === mathMult.innerHTML){
+      storedOp = mathAdd.innerHTML;
+      input = parseInt(DISPLAY.innerHTML);
+      total *= input;
+      DISPLAY.innerHTML = total;
+      displayPopulated = false;
+      console.log(storedOp);
+    }else if (storedOp === mathDivide.innerHTML){
+      storedOp = mathAdd.innerHTML;
+      input = parseInt(DISPLAY.innerHTML);
+      total /= input;
+      DISPLAY.innerHTML = total;
+      displayPopulated = false;
       console.log(storedOp);
     }
   });
@@ -118,25 +126,32 @@ let mathSubtract = document.getElementById("-");
       total = input;
       DISPLAY.innerHTML = input;
       displayPopulated = false;
-      console.log(input);
-      console.log(total);
-      console.log(storedOp);
     }else if (storedOp === mathSubtract.innerHTML){
       input = parseInt(DISPLAY.innerHTML);
       total-=input;
       DISPLAY.innerHTML = total;
       displayPopulated = false;
-      console.log(input);
-      console.log(total);
       console.log(storedOp);
-    }else if (storedOp !== mathSubtract.innerHTML){
-      input = parseInt(DISPLAY.innerHTML);
+    }else if (storedOp === mathAdd.innerHTML){
       storedOp = mathSubtract.innerHTML;
-      total -= input;
+      input = parseInt(DISPLAY.innerHTML);
+      total += input;
       DISPLAY.innerHTML = total;
       displayPopulated = false;
-      console.log(input);
-      console.log(total);
+      console.log(storedOp);
+    }else if (storedOp === mathMult.innerHTML){
+      storedOp = mathSubtract.innerHTML;
+      input = parseInt(DISPLAY.innerHTML);
+      total *= input;
+      DISPLAY.innerHTML = total;
+      displayPopulated = false;
+      console.log(storedOp);
+    }else if (storedOp === mathDivide.innerHTML){
+      storedOp = mathSubtract.innerHTML;
+      input = parseInt(DISPLAY.innerHTML);
+      total /= input;
+      DISPLAY.innerHTML = total;
+      displayPopulated = false;
       console.log(storedOp);
     }
   });
@@ -154,18 +169,33 @@ let mathMult = document.getElementById("x");
       total*=input;
       DISPLAY.innerHTML = total;
       displayPopulated = false;
-    }else if (storedOp !== mathMult.innerHTML){
+    }else if (storedOp === mathAdd.innerHTML){
       storedOp = mathMult.innerHTML;
       input = parseInt(DISPLAY.innerHTML);
-      total *= input;
-      DISPLAY.innerHTML = input;
+      storedOp = mathAdd.innerHTML;
+      total += input;
+      DISPLAY.innerHTML = total;
+      displayPopulated = false;
+    }else if (storedOp === mathSubtract.innerHTML){
+      storedOp = mathMult.innerHTML;
+      input = parseInt(DISPLAY.innerHTML);
+      storedOp = mathSubtract.innerHTML;
+      total -= input;
+      DISPLAY.innerHTML = total;
+      displayPopulated = false;
+    }else if (storedOp === mathDivide.innerHTML){
+      storedOp = mathMult.innerHTML;
+      input = parseInt(DISPLAY.innerHTML);
+      storedOp = mathDivide.innerHTML;
+      total /= input;
+      DISPLAY.innerHTML = total;
       displayPopulated = false;
     }
   });
 
   let mathDivide = document.getElementById("/");
   mathDivide.addEventListener("click", function(){
-    if (typeof storedOp !== mathDivide.string){
+    if (typeof storedOp !== "string"){
       storedOp = mathDivide.innerHTML;
       input = parseInt(DISPLAY.innerHTML);
       total = input;
@@ -176,11 +206,28 @@ let mathMult = document.getElementById("x");
       total/=input;
       DISPLAY.innerHTML = total;
       displayPopulated = false;
-    }else if (storedOp !== mathDivide.innerHTML){
-      storedOp = mathAdd.innerHTML;
+    }else if (storedOp === mathAdd.innerHTML){
+      storedOp = mathDivide.innerHTML;
       input = parseInt(DISPLAY.innerHTML);
-      total /= input;
-      DISPLAY.innerHTML = input;
+      storedOp = mathAdd.innerHTML;
+      total += input;
+      DISPLAY.innerHTML = total;
+      displayPopulated = false;
+    }else if (storedOp === mathSubtract.innerHTML){
+      storedOp = mathDivide.innerHTML;
+      input = parseInt(DISPLAY.innerHTML);
+      storedOp = mathSubtract.innerHTML;
+      total -= input;
+      DISPLAY.innerHTML = total;
+      displayPopulated = false;
+    }else if (storedOp === mathMult.innerHTML){
+      storedOp = mathDivide.innerHTML;
+      input = parseInt(DISPLAY.innerHTML);
+      storedOp = mathMult.innerHTML;
+      total *= input;
+      DISPLAY.innerHTML = total;
       displayPopulated = false;
     }
   });
+
+})(window);
