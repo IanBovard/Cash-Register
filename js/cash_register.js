@@ -72,6 +72,8 @@ let registerPop = function(array){
 };
 registerPop(REGISTER_ARRAY);
 
+//math operators
+
    let input = 0;
    let total = 0;
     let storedOp;
@@ -79,75 +81,106 @@ registerPop(REGISTER_ARRAY);
 
 let mathAdd = document.getElementById("+");
   mathAdd.addEventListener("click", function(){
-    if (storedOp !== mathAdd.innerHTML){
+    if (typeof storedOp !== "string"){
       storedOp = mathAdd.innerHTML;
       input = parseInt(DISPLAY.innerHTML);
       total = input;
       DISPLAY.innerHTML = input;
       displayPopulated = false;
+      console.log(input);
+      console.log(total);
+      console.log(storedOp);
     }else if (storedOp === mathAdd.innerHTML){
       input = parseInt(DISPLAY.innerHTML);
       total+=input;
       DISPLAY.innerHTML = total;
       displayPopulated = false;
+      console.log(input);
+      console.log(total);
+      console.log(storedOp);
+    }else if (storedOp !== mathAdd.innerHTML){
+      input = parseInt(DISPLAY.innerHTML);
+      storedOp = mathAdd.innerHTML;
+      total += input;
+      DISPLAY.innerHTML = total;
+      displayPopulated = false;
+      console.log(input);
+      console.log(total);
       console.log(storedOp);
     }
   });
 
 let mathSubtract = document.getElementById("-");
   mathSubtract.addEventListener("click", function(){
-    if (storedOp !== mathSubtract.innerHTML){
+    if (typeof storedOp !== "string"){
       storedOp = mathSubtract.innerHTML;
       input = parseInt(DISPLAY.innerHTML);
       total = input;
       DISPLAY.innerHTML = input;
       displayPopulated = false;
+      console.log(input);
+      console.log(total);
+      console.log(storedOp);
     }else if (storedOp === mathSubtract.innerHTML){
       input = parseInt(DISPLAY.innerHTML);
       total-=input;
       DISPLAY.innerHTML = total;
       displayPopulated = false;
+      console.log(input);
+      console.log(total);
+      console.log(storedOp);
+    }else if (storedOp !== mathSubtract.innerHTML){
+      input = parseInt(DISPLAY.innerHTML);
+      storedOp = mathSubtract.innerHTML;
+      total -= input;
+      DISPLAY.innerHTML = total;
+      displayPopulated = false;
+      console.log(input);
+      console.log(total);
+      console.log(storedOp);
     }
   });
 
 let mathMult = document.getElementById("x");
   mathMult.addEventListener("click", function(){
-    if (storedOp !== mathMult.innerHTML){
+    if (typeof storedOp !== "string"){
       storedOp = mathMult.innerHTML;
       input = parseInt(DISPLAY.innerHTML);
       total = input;
       DISPLAY.innerHTML = input;
       displayPopulated = false;
-      console.log(input);
-      console.log(storedOp);
     }else if (storedOp === mathMult.innerHTML){
       input = parseInt(DISPLAY.innerHTML);
       total*=input;
       DISPLAY.innerHTML = total;
       displayPopulated = false;
-      console.log(total);
-      console.log(storedOp);
-      console.log(input);
+    }else if (storedOp !== mathMult.innerHTML){
+      storedOp = mathMult.innerHTML;
+      input = parseInt(DISPLAY.innerHTML);
+      total *= input;
+      DISPLAY.innerHTML = input;
+      displayPopulated = false;
     }
   });
 
   let mathDivide = document.getElementById("/");
   mathDivide.addEventListener("click", function(){
-    if (storedOp !== mathDivide.innerHTML){
+    if (typeof storedOp !== mathDivide.string){
       storedOp = mathDivide.innerHTML;
       input = parseInt(DISPLAY.innerHTML);
       total = input;
       DISPLAY.innerHTML = input;
       displayPopulated = false;
-      console.log(input);
-      console.log(storedOp);
     }else if (storedOp === mathDivide.innerHTML){
       input = parseInt(DISPLAY.innerHTML);
       total/=input;
       DISPLAY.innerHTML = total;
       displayPopulated = false;
-      console.log(total);
-      console.log(storedOp);
-      console.log(input);
+    }else if (storedOp !== mathDivide.innerHTML){
+      storedOp = mathAdd.innerHTML;
+      input = parseInt(DISPLAY.innerHTML);
+      total /= input;
+      DISPLAY.innerHTML = input;
+      displayPopulated = false;
     }
   });
